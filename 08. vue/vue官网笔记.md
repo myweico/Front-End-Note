@@ -1,11 +1,14 @@
-### 数据和方法
+# Vue官网基础笔记
+
+## 数据和方法
+
 - vue实例创建的时候会将data中所有属性都加入到实例的属性中
 - 只有在创建实例时候的数据才是响应式的，可以将属性添加到已经存在的响应式对象从而达到响应式
 - 若data使用freeze()的对象，则响应式系统无法追踪变化
 - Vue实例中使用前缀为$的特殊属性和方法
 - vue创建的时候有着不同的生命周期阶段，不同阶段有自己的函数（生命周期钩子）
 
-# 模版语法
+## 模版语法
 ### 插值
 ##### 文本 
 - `{{text}}`
@@ -66,7 +69,7 @@
 <!-- 缩写 -->
 <a @click="doSomething">...</a>
 ```
-# 计算属性和监听器
+## 计算属性和监听器
 ### 计算属性
 - 计算属性会根据依赖关系响应更新值
 - 计算属性基于依赖来缓存， 变则更，静则直返
@@ -111,7 +114,7 @@
 - 使用watch特性添加自定义的侦听器
 - watch比computed更为通用，可以定义更丰富的功能
 
-# Class and Style Binding
+## Class and Style Binding
 ### Class
 #### 对象语法
 - class可以与原来的class共存
@@ -238,7 +241,7 @@ vue会自动为需要添加前缀的样式添加前缀
 <div :style="{display: ['-webkit-box', '-ms-flexbox', 'flex']}"></div>
 ```
 
-# 条件渲染（conditional rendering）
+## 条件渲染（conditional rendering）
 ### v-if && v-else v-else-if
 ##### 单个条件渲染
 ```html
@@ -255,8 +258,8 @@ vue会自动为需要添加前缀的样式添加前缀
 </template>
 ```
 
-##### vue默认会服用已经渲染的元素
-- 当渲染的元素一致时，vue不会重新渲染新的元素，而是利用已经存在的元素
+##### vue默认会复用已经渲染的元素
+- 当渲染的元素一致时，vue不会重新渲染新的元素，而是继续使用已经存在的元素
 ```html
 <template v-if="loginType === 'username'">
   <label>Username</label>
@@ -270,7 +273,7 @@ vue会自动为需要添加前缀的样式添加前缀
 上面的lable和input元素不会重新渲染，内容不变，只改变label和占位符
 
 
-- 若不需要则添加key属性来标识唯一个的元素
+- 若需要使用新的元素则添加key属性来标识唯一个的元素
 ```html
 <template v-if="loginType === 'username'">
   <label>Username</label>
@@ -286,8 +289,9 @@ vue会自动为需要添加前缀的样式添加前缀
 ##### v-show会渲染到页面上，只是改变是否显示
 有较高初始渲染消耗
 
-# 列表渲染
+## 列表渲染
 ### 遍历数组类型
+
 ##### v-for="item in array"
 ```html
 <ul id="example">
@@ -316,7 +320,7 @@ var vm = new Vue({
 ##### v-for="(value, name) in object"
 ##### v-for="(value, name, index) in object"
 
-# key
+## key
 [key](https://vuejs.org/v2/guide/list.html#key)
 - 没有指定key的时候，多选框只记住了索引，没有绑定是哪一组
 - key值只能是字符串或者数字
@@ -417,7 +421,7 @@ vm.uerProfile = Object.assign({}, vm.userProfile, {
 })
 ```
 
-# 事件处理
+## 事件处理
 ### 监听事件
 - 使用`v-on:event.setting="handler"`监听事件，简写`@event.setting="handler"`
 - handler为代码直接量
@@ -493,27 +497,27 @@ vm.uerProfile = Object.assign({}, vm.userProfile, {
 ### 键值修正符
 ##### 常用的按键
 - `.enter`
-- `tab`
+- `.tab`
 - `.esc`
-- `left`
-- `right`
-- `up`
-- `down`
-- `space`
-- `delete`(delete or backspace)
+- `.left`
+- `.right`
+- `.up`
+- `.down`
+- `.space`
+- `.delete`(delete or backspace)
 
 ##### 系统修饰按键
 当下面的事件按下的时候，鼠标或键盘或键盘事件才会触发
-- `alt`
-- `shift`
-- `ctrl`
-- `meta`
+- `.alt`
+- `.shift`
+- `.ctrl`
+- `.meta`
 
 ##### 鼠标修饰符
-- `up`
-- `right`
-- `down`
-- `left`
+- `.up`
+- `.right`
+- `.down`
+- `.left`
 
 ##### exact修饰符
 ```html
@@ -534,7 +538,7 @@ Vue.config.keyCodes.f2 = 113;
 ```
 
 ##### 自动聚焦
-# 表格输入绑定
+## 表格输入绑定
 - 使用`v-model`实现双向数据流，内存中的数据影响页面（input）,页面的数据（input）也会影响内存的数据（data）
 - `v-model`会忽略初始的value、checked以及selected，应该使用data中绑定的数据初始化
 
@@ -576,7 +580,6 @@ Vue.config.keyCodes.f2 = 113;
 ```
 
 ### checkbox复选按钮
-##### single
 - single checkbox返回的是一个布尔值
 ```html
 <div id="container">
@@ -713,7 +716,7 @@ vm.selected.number // => 123
 <input v-model.trim="msg">
 ```
 
-# Component
+## Component
 ### 实例
 - 创建模板
 ```js
@@ -841,16 +844,16 @@ var vm = new Vue({
 ></blog-post>
 ```
 - 若使用方法处理，默认事件参数传到第一个参数
-html
 ```html
+<!-- html -->
 <blog-post
   ...
   v-on:enlarge-text="onEnlargeText"
 ></blog-post>
 ```
 
-vm.methods
 ```js
+/* vm.method */
 methods: {
   onEnlargeText: function (enlargeAmount) {
     this.postFontSize += enlargeAmount
@@ -898,7 +901,8 @@ Vue.component("custom-input", {
     Somethind bad happened
 </alert-box>
 ```
-组件的内容
+- 组件的内容
+
 ```js
 Vue.component("alert-box", {
     template: `
@@ -923,7 +927,7 @@ Vue.component("alert-box", {
 - 注意`<ul>`,`<ol>`,`<table>`, `<select>`等标签中回限制只能添加某些标签，因此无法时候用自定义的组件
 - 可以使用不受限制的标签，然后使用is属性调用对应组件即可
 
-# 过渡和动画
+## 过渡和动画
 ### 过渡
 ##### 单个元素或者组件的过渡
 - 使用transition将单个元素或者组件包裹

@@ -29,7 +29,7 @@
     - M，Model层，处理数据
     - V，视图层，前端页面
     - C，控制层，业务逻辑层
-- MVVC
+- MVVM
     - app.js项目一切的入口模块，一切的请求都要先进入这里进行处理，没有路由奋发功能需要调用router.js模块进行处理
     - router.js路由奋发处理模块，只负责奋发路由，不负责具体业务逻辑处理，若涉及业务逻辑处理，只能调用controller模块进行业务逻辑处理
     - controller，业务逻辑层，封装了一些具体的业务逻辑处理代码，不负责处理数据的CRUD，需要调用Model层
@@ -116,13 +116,12 @@ console.log(index);
 - 被用作常见文本的格式化
 - 只能作用于占位符以及v-bind
 
-##### 
-- 调用格式：{{ name | nameope }}
-- Vue.fliter('过滤器的名称', function(name){})
-- 私有过滤器使用`filter: {name: function() {}};
+- 调用格式：`{{ name | nameope }}`
+- Vue.fliter('过滤器的名称', `function (name) { } )`
+- 私有过滤器使用`filter: {name: function() {}}`;
 - 过滤器的第一个参数都是管道符前面的参数
 - 过滤器可以串联
- 
+
 ##### es6添加的填充新方法padStart(maxLength, padChar)
 
 ### 自定义指令
@@ -376,7 +375,7 @@ this.refs.compn.method()    // 调用组件的方法
 ### 其他
 ##### 指令后面的属性值
 - 指令后面的属性值都是表达式，会执行表达式然后给指令
-    
+  
 # 路由
 ### 路由的概念
 ##### 后端路由
