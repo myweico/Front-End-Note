@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车宣传</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--公用的元素-->
+<a href="#" class="go"><img src="images/00-go.png" alt=""></a>
+<a href="javascript:;" class="more"><img src="images/00-more.png" alt=""></a>
+<!--整体容器-->
+<!--1.指示器 点容器-->
+<div class="container">
+    <!--每一个切换的屏幕 背景-->
+    <div class="section screen01">
+        <!--如果是大屏幕 是基于top定位  脱离显示区域  固定在一个区域内  用一个固定大小的容器来装内容-->
+        <div class="content">
+            <!--商品列表，沙发，横幅-->
+            <div class="goods"><img src="images/01-goods.png" alt=""></div>
+            <div class="sofa"><img src="images/01-sofa.png" alt=""></div>
+            <div class="fly"><img src="images/01-fly.png" alt=""></div>
+        </div>
+    </div>
+    <!--第二屏  动画特点：完全进入当前屏的时候执行动画-->
+    <!--1.什么时候完全进入-->
+    <!--2.怎么做动画  给大容器追加一个类  在这个类下面可以给需要做动画的元素添加动画属性-->
+    <div class="section screen02">
+        <div class="content">
+            <!--商品列表-->
+            <div class="goods"><img src="images/02-goods.png" alt=""></div>
+            <!--沙发-->
+            <div class="sofa"><img src="images/02-sofa.png" alt=""></div>
+            <!--输入框 搜索框 关键字-->
+            <div class="input">
+                <img class="search" src="images/02-search.png" alt="">
+                <img class="key" src="images/02-key.png" alt="">
+            </div>
+            <!--文字-->
+            <div class="text">
+                <img class="text01" src="images/02-text1.png" alt="">
+                <img class="text02" src="images/02-text2.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--active 默认显示的页面-->
+    <div class="section screen03">
+        <div class="content">
+            <div class="sofa"><img src="images/02-sofa.png" alt=""></div>
+            <div class="change">
+                <img src="images/03-change01.gif" alt="">
+                <img src="images/03-change02.gif" alt="">
+            </div>
+            <div class="cart">
+                <img src="images/03-cart01.gif" alt="">
+                <img src="images/03-cart02.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="section screen04">
+        <div class="content">
+            <!--白云-->
+            <div class="cloud"><img src="images/04-cloud.png" alt=""></div>
+            <!--文字-->
+            <div class="text">
+                <img src="images/04-text01.png" alt="">
+                <img src="images/04-text02.png" alt="">
+            </div>
+            <!--购物车-->
+            <div class="cart"><img src="images/04-cart.png" alt=""></div>
+            <!--沙发-->
+            <div class="sofa"><img src="images/02-sofa.png" alt=""></div>
+            <!--收货地址-->
+            <div class="address">
+                <img src="images/04-address01.png" alt="">
+                <img src="images/04-address02.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="section">5</div>
+    <div class="section">6</div>
+    <div class="section">7</div>
+    <div class="section">8</div>
+</div>
+<script src="jsnew/jquery.min.js"></script>
+<script src="jsnew/fullpage.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

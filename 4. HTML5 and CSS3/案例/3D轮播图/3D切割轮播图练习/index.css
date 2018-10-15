@@ -1,0 +1,122 @@
+body,div,ul,li,span {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.display {
+    width: 560px;
+    height: 300px;
+    margin: 200px auto 0;
+    /*border: 1px solid #000;*/
+    position: relative;
+}
+
+.display ul {
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    transform-style: preserve-3d;
+}
+
+.display ul li {
+    width: 112px;
+    height: 100%;
+    float: left;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s;
+}
+
+.display li span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+.display li span:nth-child(1) {
+    transform: translateZ(150px);
+    background-image: url("images/1.jpg");
+}
+
+.display li span:nth-child(2) {
+    transform: rotateX(90deg) translateZ(150px);
+    background-image: url("images/2.jpg");
+}
+
+.display li span:nth-child(3) {
+    transform: rotateX(180deg) translateZ(150px);
+    background-image: url("images/3.jpg");
+}
+
+.display li span:nth-child(4) {
+    transform: rotateX(270deg) translateZ(150px);
+    background-image: url("images/4.jpg");
+}
+
+.display li:nth-child(1) span {
+
+}
+
+.display li:nth-child(2) span {
+    background-position: -112px 0;
+}
+
+.display li:nth-child(3) span {
+    background-position: -224px 0;
+}
+
+.display li:nth-child(4) span {
+    background-position: -336px 0;
+}
+
+.display li:nth-child(5) span {
+    background-position: -448px 0;
+}
+
+.display .left {
+    position: absolute;
+    background: rgba(0, 0, 0, .2);
+    height: 55px;
+    width: 30px;
+    font-size: 24px;
+    line-height: 55px;
+    text-align: center;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    /*transform: translateY(-50%);*/
+    cursor: pointer;
+
+    /*禁止选中*/
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+.display .right {
+    position: absolute;
+    background: rgba(0, 0, 0, .2);
+    height: 55px;
+    width: 30px;
+    font-size: 24px;
+    line-height: 55px;
+    text-align: center;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /*禁止选中*/
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}

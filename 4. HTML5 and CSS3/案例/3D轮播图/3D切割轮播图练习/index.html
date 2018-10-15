@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>3D切割轮播图</title>
+</head>
+<body>
+ <div class="display">
+     <ul>
+         <li>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+         </li>
+         <li>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+         </li>
+         <li>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+         </li>
+         <li>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+         </li>
+         <li>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+         </li>
+     </ul>
+     <div class="left">&lt;</div>
+     <div class="right">&gt;</div>
+ </div>
+ <script src="jquery.min.js"></script>
+ <script>
+     $(function(){
+         var index = 0;
+        var flag = true;
+         // 点击事件
+         $(".left").on("click",function(){
+             if (!flag) return;
+             flag = false;
+             index++;
+             $(".display ul li").css("transform","rotateX(" + index * 90 + "deg)").each(function(i,e){
+                 $(this).css("transition-delay",i * 0.15 + "s");
+             }).last().on("transitionend",function(){
+                 flag = true;
+             });
+
+         });
+
+         $(".right").on("click",function(){
+             if (!flag) return;
+             flag = false;
+             index--;
+             $(".display ul li").css("transform","rotateX(" + index * 90 + "deg)").each(function(i,e){
+                 $(this).css("transition-delay",i * 0.15 + "s");
+             }).last().on("transitionend",function(){
+                 flag = true;
+             });
+         });
+
+         // 优化重复执行的bug,设置节流阀
+     });
+ </script>
+</body>
+</html>

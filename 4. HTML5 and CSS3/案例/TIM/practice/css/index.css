@@ -1,0 +1,292 @@
+/*================= reset css =================*/
+body, section, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/*================= model css =================*/
+.nav {
+    height: 150px;
+    width: 100%;
+    background: url("../images/nav_bg.png") repeat-x;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.nav .wrapper {
+    width: 1080px;
+    height: 75px;
+    margin: 0 auto;
+}
+
+.nav .wrapper .brand {
+    width: 100px;
+    height: 75px;
+    background: url("../images/nav_brand.png") no-repeat center;
+    float: left;
+}
+
+.nav .wrapper .navInner {
+    float: left;
+}
+
+.nav .wrapper .navInner li {
+    float: left;
+    font-size: 18px;
+    line-height: 75px;
+}
+
+.nav .wrapper .navInner li a {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 0 20px;
+}
+
+/*
+.nav .wrapper .navInner li:first-child a {
+    margin-left: 20px;
+}
+
+.nav .wrapper .navInner li:last-child a {
+    margin-right: 20px;
+}*/
+
+.nav .wrapper .navInner li a.active,
+.nav .wrapper .navInner li a:hover {
+    background: #12b7f5;
+}
+
+.nav .wrapper .register {
+    width: 96px;
+    height: 36px;
+    display: inline-block;
+    margin-top: 19px;
+    float: right;
+    background: #12b7f5;
+    font-size: 16px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+    border-radius: 36px;
+}
+
+.nav .wrapper .other {
+    width: 250px;
+    height: 75px;
+    float: right;
+}
+
+.nav .wrapper .other ul {
+    float: right;
+}
+
+.nav .wrapper .other ul li {
+    float: right;
+}
+
+.nav .wrapper .other ul li a{
+    margin-left: 40px;
+    height: 50px;
+    line-height: 50px;
+    text-shadow: 0 0 2px #333;
+}
+
+.nav .wrapper .other span {
+    float: right;
+}
+
+/* --------------------------------------------- */
+.banner {
+}
+.banner {
+    background: url("../images/banner-bg.jpg");
+    padding-top: 150px;
+}
+
+.banner img {
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.banner img:last-child {
+    width: 100%;
+}
+/* --------------------------------------------- */
+.voice h1 {
+    height: 300px;
+    text-indent: -1000px;
+    background: url("../images/sound-text.png") no-repeat center top;
+}
+.voice .bg {
+    background: url("../images/sound-bg.jpg");
+    height: 500px;
+}
+.voice .content {
+    width: 980px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.voice .content .iphone {
+    width: 700px;
+    height: 700px;
+    background: url("../images/sound-phone.png") no-repeat left top/cover;
+    position: absolute;
+    top: -200px;
+}
+.voice .content h2 {
+    float: right;
+    margin-top: 100px;
+    font-size: 40px;
+    width: 500px;
+    text-align: right;
+}
+.voice .content p {
+    float: right;
+    width: 500px;
+    text-align: right;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+/* --------------------------------------------- */
+.everywhere .bg {
+    background: url("../images/file-bg.jpg");
+    height: 500px;
+}
+.everywhere .content {
+    width: 980px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.everywhere .content .mac {
+    width: 600px;
+    height: 340px;
+    background: url("../images/file-mac.png") no-repeat center/cover;
+    position: absolute;
+    right: -75px;
+    top: 61px;
+}
+.everywhere .content h2 {
+    float: left;
+    margin-top: 100px;
+    font-size: 40px;
+    width: 500px;
+    text-align: left;
+}
+.everywhere .content p {
+    float: left;
+    width: 500px;
+    text-align: left;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+/* --------------------------------------------- */
+.interest .bg {
+    background: url("../images/interest-bg.jpg");
+    height: 500px;
+}
+.interest .content {
+    width: 980px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.interest .content .phone {
+    width: 350px;
+    height: 500px;
+    background: url("../images/interest-phone.png") no-repeat top left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.interest .content h2 {
+    float: right;
+    margin-top: 170px;
+    font-size: 40px;
+    width: 500px;
+    text-align: right;
+}
+.interest .content p {
+    float: right;
+    width: 500px;
+    text-align: right;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+
+/* --------------------------------------------- */
+.qq_footer{
+    height: 250px;
+    background: #2a2a2a;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 50px;
+    color: #666;
+}
+.plats{
+    width: 800px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+}
+.plats a {
+    float: left;
+    background: transparent url(../images/footer.png) no-repeat 10px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding-top: 50px;
+    width: 80px;
+    margin: 0 60px;
+}
+.plats a:hover {
+    color: #12b7f5;
+}
+.plats a.plmb {
+    background-position: 0 0;
+}
+.plats a.plmb:hover {
+    background-position: 0 -93px;
+}
+.plats a.plpc {
+    background-position: -105px 0;
+}
+.plats a.plpc:hover {
+    background-position: -105px -93px;
+}
+.plats a.plmac {
+    background-position: -210px 0;
+}
+.plats a.plmac:hover {
+    background-position: -210px -93px;
+}
+.plats a.plpad {
+    background-position: -326px 0;
+}
+.plats a.plpad:hover {
+    background-position: -326px -93px;
+}
+
+.voice .bg, .everywhere .bg, .interest .bg {
+    background-attachment: fixed;
+}
+

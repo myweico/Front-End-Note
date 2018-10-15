@@ -1,0 +1,910 @@
+.shopCenter {
+    position: fixed;
+    right: 70px;
+    top: 20px;
+    z-index: 1000;
+}
+
+.next {
+    position: fixed;
+    right: 50px;
+    bottom: 40px;
+    z-index: 1000;
+    animation: next 0.5s infinite linear alternate;
+}
+
+.content {
+    width: 840px;
+    height: 440px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /*transform: translate(-50%);*/
+    background: rgba(0, 0, 0, 0.1);
+    margin-left: -420px;
+}
+.section {
+    z-index: auto;
+}
+/*全局动画*/
+@keyframes next {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(-20px);
+}
+}
+
+
+/*================ 第一屏样式 ================ */
+.screen01 {
+    background: url("../images/01-bg.png") no-repeat bottom center;
+}
+
+.screen01 .sofa {
+    position: absolute;
+    left: 170px;
+    top: -100px;
+    animation: sofa01 2s linear infinite alternate;
+}
+
+.screen01 .fly {
+    position: absolute;
+    right: -80px;
+    top: -130px;
+    animation: fly01 1s linear infinite alternate;
+}
+
+.screen01 .goods {
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+}
+
+/*定义第一屏动画*/
+@keyframes fly01 {
+    from {
+    }
+    to {
+        transform: translateY(50px);
+    }
+}
+
+@keyframes sofa01 {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+/*================ 第二屏样式 ================ */
+.screen02 {
+    background: url("../images/02-bg.png") no-repeat bottom center;
+    position: relative;
+}
+
+.screen02 .text021 {
+    position: absolute;
+    top: -200px;
+    left: 250px;
+    /*transition: all 3s;*/
+}
+
+.screen02 .text022 {
+    position: absolute;
+    top: -200px;
+    left: 250px;
+    opacity: 0;
+    /*transition: all 3s;*/
+}
+
+.screen02 .searchBox {
+    position: absolute;
+    right: 330px;
+    top: -46px;
+    opacity: 0;
+}
+
+.screen02 .searchBox .search02 {
+    position: absolute;
+    transform: scale(0.7);
+    /*top: -46px;*/
+    /*right: 108px;*/
+}
+
+.screen02 .searchBox .key02 {
+    position: absolute;
+    transform: scale(0.7);
+    right: -160px;
+    top: 6px;
+}
+
+.screen02 .goods02 {
+    position: absolute;
+    transform-origin: right bottom;
+    transform: scale(0);
+    top: 10px;
+    left: 200px;
+    transition: all 1s;
+}
+
+.screen02 .sofa02 {
+    position: absolute;
+    transform: scale(0.5);
+    opacity: 0;
+    left: 261px;
+    top: -26px;
+    z-index: 1001;
+}
+
+/* 加载完第二屏的样式 */
+.screen02.now .text021 {
+    opacity: 0;
+    transition: all 3s;
+}
+
+.screen02.now .text022 {
+    opacity: 1;
+    transition: all 3s;
+}
+
+.screen02.now .goods02 {
+    transform: scale(1);
+    transition: all 1s linear 2s;
+}
+
+.screen02.now .searchBox {
+    animation: searchBox02A 3s linear forwards;
+}
+
+.screen02.now .search02 {
+    animation: search02A 3s linear;
+}
+
+.screen02.now .key02 {
+    animation: key02A 3s linear;
+}
+
+/* 离开第二屏的动画 */
+.screen02.leaved .sofa02 {
+    animation: sofa02A 1s linear;
+}
+
+/* 第二屏的动画 */
+@keyframes searchBox02A {
+    0% {
+        top: 100px;
+        right: -2000px;
+        opacity: 1;
+    }
+
+    33.3% {
+        top: 100px;
+        right: 538px;
+    }
+
+    66.6% {
+        top: 100px;
+        right: 538px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes search02A {
+    0% {
+        transform: scale(1);
+    }
+
+    66.6% {
+        transform: scale(1);
+    }
+}
+
+@keyframes key02A {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    33.3% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    66.6% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes sofa02A {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+        transform: translate(-82px,828px);
+    }
+}
+/*================ 第三屏样式 ================ */
+.screen03 {
+    background: url("../images/03-bg.png") no-repeat bottom center;
+    /*z-index: -1;*/
+}
+
+.screen03 .change01 {
+    position: absolute;
+    top: 144px;
+    right: 85px;
+}
+
+.screen03 .change02 {
+    position: absolute;
+    top: 144px;
+    right: 85px;
+    opacity: 0;
+}
+
+.screen03 .cart01 {
+    position: absolute;
+    top: 295px;
+    right: 130px;
+}
+
+.screen03 .cart02 {
+    position: absolute;
+    top: 295px;
+    right: 130px;
+    opacity: 0;
+}
+
+.screen03 .sofa03 {
+    position: absolute;
+    top: 32px;
+    left: 180px;
+    opacity: 0;
+    z-index:1001;
+}
+
+/* 第三屏加载完成后的动画*/
+.screen03.now .sofa03 {
+    opacity: 1;
+}
+
+.screen03.now .cart01 {
+    opacity: 0;
+    transition: all 0.7s;
+
+}
+
+.screen03.now .cart02 {
+    opacity: 1;
+    transition: all 0.7s;
+
+}
+
+.screen03.now .change01 {
+    opacity: 0;
+    transition: all 0.7s;
+
+}
+
+.screen03.now .change02 {
+    opacity: 1;
+    transition: all 0.7s;
+
+}
+
+/* 离开第三屏的样式 */
+.screen03.leaved .sofa03 {
+    animation: sofa03A 1s linear;
+    z-index: 1001;
+}
+
+/* 第三屏的动画 */
+@keyframes sofa03A {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+        transform: translate(121px, 733px) rotate(15deg);
+    }
+}
+/*================ 第四屏样式 ================ */
+.screen04 {
+    background: url("../images/04-bg.png") no-repeat bottom center;
+}
+
+.screen04 .cloud {
+    position: absolute;
+    top: -312px;
+    animation: clouds04A 20s linear infinite alternate;
+}
+
+.screen04 .cart {
+    position: absolute;
+    top: 46px;
+    left: 150px;
+    z-index: 1002;
+}
+
+.screen04 .cart .trolley {
+    position: relative;
+    z-index: 2;
+}
+.screen04 .cart .sofa04{
+    position: absolute;
+    top: -50px;
+    left: 150px;
+    z-index: 0;
+    opacity: 0;
+}
+
+.screen04 .address {
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    opacity: 0;
+}
+
+.screen04 .address img:last-child{
+    position: absolute;
+    top: 57px;
+    left: 61px;
+}
+
+.screen04 .text {
+    position: absolute;
+    top: -91px;
+    left: 172px;
+}
+
+.screen04 .text img:first-child{
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.screen04 .text img:last-child{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+
+/* 进入完第四屏的样式 */
+.screen04.now .cart {
+    transform: translateX(2000px);
+    transition: all 3s linear;
+}
+
+.screen04.now .cart .sofa04{
+    opacity: 1;
+    transform: rotate(-15deg);
+    transition: transform 3s linear;
+}
+
+/* 结束第四屏的购物车动画后的样式 */
+.screen04.show .text img:first-child {
+    opacity: 0;
+    /*transition: all 0.5s linear;    */
+}
+
+.screen04.show .text img:last-child {
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+.screen04.show .address {
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+
+.screen04.show .address img:last-child {
+    opacity: 1;
+    transition: all 0.5s linear 0.2s;
+}
+
+/* 第四屏的动画 */
+@keyframes clouds04A {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(800px);
+    }
+}
+
+/*================ 第五屏样式 ================ */
+.screen05 {
+    background: url("../images/05-bg.png") no-repeat bottom center;
+}
+
+.screen05 .content {
+    height: 100%;
+}
+.screen05 .text {
+    position: absolute;
+    left: -220px;
+    bottom: 520px;
+    opacity: 0;
+}
+
+.screen05 .creditCard{
+    position: absolute;
+    left: -75px;
+    bottom: 439px;
+}
+
+.screen05 .creditCard .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+}
+
+.screen05 .creditCard .order {
+    position: absolute;
+    /*账单隐藏位置*/
+    top: 40px;
+    left: 120px;
+
+    /*账单显示位置*/
+    /*top: -75px;
+    left: 120px;*/
+}
+
+.screen05 .creditCard .sofa05 {
+    position: absolute;
+    /*沙发隐藏位置*/
+    top: 40px;
+    left: 80px;
+    z-index: 1001;
+
+    /*沙发显示位置*/
+    /*top: 170px;
+    left: 90px;*/
+    transform: rotate(40deg);
+}
+
+.screen05 .mouse {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+     overflow: hidden;
+    background: rgba(0,0,0,0.1);
+}
+
+.screen05 .mouse img:first-child {
+    position: absolute;
+    bottom: 230px;
+    right: 0;
+}
+
+.screen05 .mouse img:last-child {
+    position: absolute;
+    bottom: 230px;
+    right: 0;
+    opacity: 0;
+}
+
+.screen05 .hand {
+    position: absolute;
+    /* 点击鼠标位置 */
+    bottom: 0;
+    right: 60px;
+    transform: translateY(450px);
+    /* 初始位置 */
+    /*top: 270px;
+    right: 0px;*/
+}
+
+/* 加载完第五屏的样式*/
+.screen05.now .hand {
+    transform: none;
+    transition: all 1s linear;
+}
+
+.screen05.now .text {
+    opacity: 1;
+    transition: all 1s linear 2.2s;
+}
+
+.screen05.now .mouse img:last-child {
+    opacity: 1;
+    transition: all 0.2s linear 1s;
+}
+
+.screen05.now .creditCard .sofa05 {
+    animation: sofa05A 2s linear 1.2s forwards;
+}
+
+.screen05.now .creditCard .order {
+    transform: translateY(-100px);
+    transition: all 1s linear 2.2s;
+}
+
+/* 离开第五屏的样式 */
+.screen05.leaved .creditCard .sofa05 {
+    animation: sofa05ALeaved 1s linear;
+}
+/* 第五屏的动画 */
+@keyframes sofa05A {
+    from {
+        transform: translateY(-1000px) rotate(40deg);
+    }
+    50% {
+        transform: translateY(0) rotate(40deg);
+    }
+    to {
+        transform: translateY(110px) rotate(40deg);
+    }
+}
+
+/*@keyframes sofa05ALeaved {
+    from {
+    }
+    90% {
+        transform: translateY(475px) rotate(40deg) scale(0.46);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(523px) rotate(40deg) scale(0.3);
+        opacity: 0;
+    }
+}*/
+
+@keyframes sofa05ALeaved {
+    from {
+        transform: translateY(110px) rotate(40deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(523px) rotate(40deg) scale(0.3);
+        opacity: 0.5;
+    }
+}
+/*================ 第六屏样式 ================ */
+.screen06 {
+    background: url("../images/06-bg.png") no-repeat 25% bottom;
+}
+
+.screen06 .box{
+    position: absolute;
+    bottom: 510px;
+    left: -340px;
+    z-index: 1002;
+}
+
+.screen06 .send{
+     position: absolute;
+     left: 0;
+     bottom: 0;
+    width: 221px;
+    height: 122px;
+ }
+
+.screen06 .send .car{
+position: absolute;
+bottom: 0;
+left: 0;
+z-index: 1004;
+}
+
+.screen06 .send .worker{
+/*    position: absolute;
+    bottom: -102px;
+    left: -30px;
+    transform: scale(0.25);
+    z-index: 1003;*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scale(0);
+    transform-origin: bottom right;
+}
+
+.screen06 .send .buyer{
+    position: absolute;
+    bottom: 114px;
+    left: 200px;
+}
+
+.screen06 .send .buyer{
+    position: absolute;
+    bottom: 114px;
+    left: 200px;
+    opacity: 0;
+}
+
+.screen06 .send .address{
+    position: absolute;
+    bottom: 114px;
+    left: 200px;
+    opacity: 0;
+}
+
+.screen06 .send .say{
+    position: absolute;
+    bottom: 420px;
+    right: -326px;
+    z-index: 10;
+    opacity: 0;
+}
+
+.screen06 .receipt {
+    position: absolute;
+    right: -63px;
+    bottom: 116px;
+    width: 106px;
+    height: 150px;
+}
+
+.screen06 .receipt .person{
+    position: absolute;
+    transform: scale(0);
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+}
+
+.screen06 .receipt .door{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+
+/*.screen06 .person{*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+/*}*/
+
+.screen06 .cloud06{
+    position: absolute;
+    bottom: 530px;
+    left: 0;
+    z-index: 2;
+}
+
+.screen06 .cloud06 img:first-child {
+    animation: cloud061A 15s linear infinite alternate ;
+}
+
+.screen06 .cloud06 img:last-child {
+    animation: cloud062A 25s linear 1s infinite alternate;
+}
+
+.screen06 .text06{
+    position: absolute;
+    bottom: 460px;
+    left: -10px;
+    z-index: 1;
+}
+
+.screen06 .text06 img:first-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.screen06 .text06 img:last-child {
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* 加载完第六屏的样式 */
+.screen06.now {
+    background: url("../images/06-bg.png") no-repeat 100% bottom;
+    transition: all 1s linear 1s;
+}
+
+/*.screen06.now .send {
+    transform: translateX(400px);
+    transition: all 2s linear 1.5s;
+}*/
+
+.screen06 .box.show {
+    animation: box06A 2s linear forwards;
+}
+
+.screen06.now .send .worker {
+    animation: workers06A 2s linear 2s forwards;
+}
+
+.screen06.now .send .buyer {
+    opacity: 1;
+    transition: all 0.1s linear 1.1s;
+}
+
+.screen06.now .send .address {
+    opacity: 1;
+    transition: all 0.1s linear 1.6s;
+}
+
+.screen06.now .send .say {
+    opacity: 1;
+    transition: all 0.5s linear 4s;
+}
+
+.screen06.now .receipt .door {
+    opacity: 1;
+    transition: all 0.5s linear 4.5s;
+}
+
+.screen06.now .receipt .person {
+   animation: person06A 2s linear 5s forwards;
+}
+
+.screen06.now .text06 img:last-child {
+    opacity: 1;
+    transition: all 0.5s linear 4s;
+}
+
+/*.screen06.now .cloud06 img:first-child {
+    animation: cloud061A 15s linear infinite alternate ;
+}
+
+.screen06.now .cloud06 img:last-child {
+    animation: cloud062A 30s linear infinite alternate 2s;
+}*/
+/* 第六屏动画 */
+/*@keyframes box06A {
+    from {}
+    33.33% {
+        transform: translate(300px,0);
+    }
+    99.99% {
+        transform: translate(300px,490px);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}*/
+
+@keyframes box06A {
+    from {}
+    50% {
+        transform: translate(370px,0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(370px,490px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes cloud061A {
+    from {}
+    to {
+        transform: translateX(600px);
+    }
+}
+
+@keyframes cloud062A {
+    from {}
+    to {
+        transform: translateX(400px);
+    }
+}
+
+@keyframes workers06A {
+    from {
+        transform: translate(0,0) scale(0);
+    }
+    50% {
+        transform: translate(50px,-112px) scale(1);
+    }
+    to {
+        transform: translate(300px,-112px) scale(1);
+    }
+}
+
+@keyframes person06A{
+    from {}
+    50% {
+        transform: scale(1);
+    }
+    to {
+        transform: translateX(-200px) scale(1);
+    }
+}
+
+/*================ 第七屏样式 ================ */
+.screen07 {
+    background: url("../images/07-bg.png") no-repeat bottom center;
+}
+
+.screen07 .star {
+    position: absolute;
+    left: 127px;
+    top: -18px;
+}
+
+.screen07 .star img {
+    float: left;
+    margin-right: 6px;
+    display: none;
+    /*opacity: 0;*/
+}
+
+.screen07 .good {
+    position: absolute;
+    left: 139px;
+    top: 20px;
+    transform-origin: left bottom;
+    transform: scale(0);
+}
+
+.screen07.now .good {
+    animation: good07A 0.6s linear 1.3s forwards;
+}
+
+/* 第七屏动画 */
+@keyframes good07A {
+    from {}
+    80% {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+/*================ 第八屏样式 ================ */
+.screen08 {
+    background: url("../images/08-bg.png");
+}
+
+.screen08 .btn{
+    width: 389px;
+    height: 160px;
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    margin-left: -195px;
+}
+
+.screen08 .btn img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screen08 .btn img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.screen08 .btn:hover img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.screen08 .btn img:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    cursor: pointer;
+}
+
+.screen08 .hand {
+    position: absolute;
+    top: -110px;
+    left: 350px;
+}
