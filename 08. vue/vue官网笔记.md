@@ -116,6 +116,7 @@
 
 ## Class and Style Binding
 ### Class
+
 #### 对象语法
 - class可以与原来的class共存
 - class可以是一个内联的对象
@@ -188,9 +189,10 @@ Vue.component("my-conponent", {
 <my-component v-bind:class="{active: isActive}"></my-component>
 ```
 
-# Binding Inline Styles
-### 对象语法
-##### 对象直接量，对象属性名为样式名，对象属性值为样式属性值
+### Binding Inline Styles
+#### 对象语法
+- 对象直接量，对象属性名为样式名，对象属性值为样式属性值
+
 ```html
     <div class="example">
         <div v-bind:style="{width:widthValue, height:heightValue, backgroundColor:color}"></div>
@@ -206,7 +208,8 @@ Vue.component("my-conponent", {
        });
 ```
 
-##### class写对象名字
+- style写对象名字
+
 ```html
 <div class="example">
     <div v-bind:style="styleObj"></div>
@@ -226,17 +229,21 @@ var vm = new Vue({
 </script>
 ```
 
-### 数组语法
-##### 数组中引用多个样式对象
+#### 数组语法
+数组中引用多个样式对象
+
 ```html
 <div v-bind:class="[baseStyle, overridingStyles]"></div>
 ```
 
-##### 自动加前缀
-vue会自动为需要添加前缀的样式添加前缀
+自动加前缀
 
-##### 多值
+- vue会自动为需要添加前缀的样式添加前缀
+
+多值
+
 - 从2.3开始，可以添加一个多值的数组，会采用最后一个有效的属性
+
 ```html
 <div :style="{display: ['-webkit-box', '-ms-flexbox', 'flex']}"></div>
 ```
@@ -320,7 +327,7 @@ var vm = new Vue({
 ##### v-for="(value, name) in object"
 ##### v-for="(value, name, index) in object"
 
-## key
+### key
 [key](https://vuejs.org/v2/guide/list.html#key)
 - 没有指定key的时候，多选框只记住了索引，没有绑定是哪一组
 - key值只能是字符串或者数字
