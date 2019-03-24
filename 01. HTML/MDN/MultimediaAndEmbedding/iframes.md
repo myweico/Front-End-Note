@@ -22,3 +22,7 @@
 ## embed和object元素
 embed和object元素：用于嵌入多种类型的外部内容的通用嵌入工具
 
+embed和object现在用处已不太大了：
+- falsh弃用
+- pdf倾向于被链接而不是预览
+- 视频和音频有更好的video和audio处理
